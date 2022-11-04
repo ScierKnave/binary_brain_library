@@ -5,7 +5,7 @@
 #include <array>
 using namespace std;
 
-//what is this 2
+//what is this 2 in the 4
 
 class neural_network{
   public:
