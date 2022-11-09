@@ -7,7 +7,7 @@ def function():
 ```
 
 # His goal
-awdaw
+awdawds
 ## Notation:
 
 $\odot$ is the Hadamart product
