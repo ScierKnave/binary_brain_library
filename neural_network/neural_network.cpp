@@ -1,5 +1,5 @@
 
-// function template
+// function templates
 #include <iostream>
 #include <string>
 #include <vector>
