@@ -1,23 +1,54 @@
-# Our goal
-$\int(2^x)$
-$$\int(2^x)= \frac{\partial x}{\partial y} $$
-```python
-def function():
-    t
-```
+\documentclass[11pt]{article}
+\usepackage{tikz}
 
-# His goal
-awdawds
-## Notation:
 
-$\odot$ is the Hadamart product
-## How to compute the gradient slice of $w_{i}^L$ recursively
-$$
+
+\title{ Title}
+\author{ Author }
+\date{\today}
+
+\begin{document}
+
+
+\subsection{Notations}
+$\odot$ is the Hadamart productsss
+
+\section{Forward propagation}
+\begin{tikzpicture}[node distance = {15mm}, main/.style = {draw, circle}]
+    \node[main] (x) {x};
+    \node[main] (h1) [right of=x] {$h_{1}$};
+    \node[main] (h2) [right of=h1] {$h_{2}$};
+    \node[main] (rest) [right of=h2] {$\dots$};
+    \node[main] (hl) [right of=rest] {$h_{L}$};
+    \node[main] (y) [right of=hl] {$\hat{y}$};
+    \draw[->] (x) -- (h1);
+    \draw[->] (h1) -- (h2);
+    \draw[->] (h2) -- (rest);
+    \draw[->] (rest) -- (hl);
+    \draw[->] (hl) -- (y);    
+\end{tikzpicture}
+
+\[a^{l} = f^{l}(o^{l})\]
+\[o^{l} = W^{l}a^{l-1}+b^{l}\]
+Therefore, if we omit the bias terms, we have that
+\[
+y=
+f^L(W^L
+	f^{L-1}(W^{L-1}(
+		\dots
+	))
+)
+\]
+
+
+
+\section{Backward propagation}
+\subsection{How to compute the gradient slice of $w_{i}^L$ recursively}
+\[
 \nabla {\frac{c}{ w^l}} 
 = 
 (\sum_{i} \nabla \frac{a^{l}_{i}}{ w^l} )
 [\nabla \frac{c}{a^l}]^T
-
 \odot
 \overrightarrow{\frac{\partial o^L}{\partial w_{i}^L}}
 =
@@ -26,8 +57,8 @@ $$
 \overrightarrow{\frac{\partial a^L}{\partial o^L}}
 \odot
 \overrightarrow{\frac{\partial o^L}{\partial w_{i}^L}}
-$$ 
-$$
+\]
+\[
 \overrightarrow{\frac{\partial c}{\partial a^L}}
 =
 \overrightarrow{\frac{\partial o^{L+1}}{\partial a^L}}
@@ -38,29 +69,19 @@ $$
 =
 \overrightarrow{\sum_{k} w_{\forall, k}^{L+1} 
 \frac{\partial c}{\partial o^{L+1}_{k}}}\\
-$$
-$$
+\]
+\[
 \overrightarrow{\frac{\partial o^L}{\partial w_{i}^L}} = a^{L-1}
-$$
+\]
 If we pose $\lambda = \frac{\partial c}{\partial o}$ and use the previous
 results we can obtain a compact recursive formulation of the gradient
 slice $w_{i}^L$
-$$
+\[
 \overrightarrow{\frac{\partial c}{\partial w_{i}^L}} 
 = 
 \lambda^{L}a^{L-1}, 
-$$
-$$
-\lambda^{L} = 
-\begin{cases}
-    \frac{\partial a^L}{\partial o^L}
-    \overrightarrow{\frac{\partial c}{\partial y}}
-    &L = |L| \\
-    \frac{\partial a^L}{\partial o^L}
-    \overrightarrow{\sum_{k} w_{\forall, k}^{L+1} \lambda^{L+1}_{k}} &otherwise
-\end{cases}
-$$
+\]
 
-$
-\usepackage{tikz}
-$
+
+
+\end{document}
