@@ -6,8 +6,6 @@
 #include <array>
 using namespace std;
 
-//what is this 2 in the 4
-
 class fc_neural_network{
   public:
     fc_neural_network(){
