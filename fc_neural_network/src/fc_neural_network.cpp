@@ -10,18 +10,19 @@ using namespace std;
 
 class fc_neural_network{
   public:
-    fc_neural_network(){
-      //complete
-    }
+fc_neural_network(){
+//complete
+}
     void add_layer(int size, string a_fun){
       //complete
     }
     void fit(int** X_train, int** Y_train, string loss_f){
       //complete
+
     }
   private:
     array<float, 0> W; //weight matrix
-    vector<float> G; //gradient
+    vector< vector<float> > G; //gradient
     void forward_prop(){
       //complete
     }
