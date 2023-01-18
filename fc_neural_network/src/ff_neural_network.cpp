@@ -21,14 +21,13 @@ class ff_nn{
         //complete
         }
     private:
-
-        vector< vector<float> > W; //weight matrix
-        vector< vector<float> > G; //gradient
+        vector< vector<float> > N_MATRIX; 
         void forward_prop(){
         //complete
         }
-        void backward_prop(){
-            
+        void backward_prop(int ith_layer){
+
+
         //complete
         }
         void gradient_descent(){
